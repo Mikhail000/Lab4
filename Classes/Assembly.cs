@@ -50,7 +50,7 @@ namespace Lab4
             {
                 temp += component.GetQuantityOfDetails();
             }
-            return temp;
+            return temp*_quantity;
         }
 
         public override void Work()
@@ -64,16 +64,18 @@ namespace Lab4
         public override void Display(int depth)
         {
             Console.WriteLine("\n" + new String(' ', depth) + 
-                $"{_name} " +
-                $"- Quantity: {_quantity} " +
-                $"- Weight: {GetWeight()/_quantity} " +
-                $"- Total weight:{GetWeight()}" +
-                $"- Quantity of details:{GetQuantityOfDetails()}");
+                $"{_name}" +
+                $" - Quantity: {_quantity}" +
+                $" - Weight: {GetWeight()/_quantity} " +
+                $" - Total weight:{GetWeight()}" +
+                $" - Quantity of details:{GetQuantityOfDetails()}" +
+                $" - Total quantity of details:{GetQuantityOfDetails()/_quantity}");
 
             foreach (MachinePart component in _children)
             {
-                component.Display(depth + 8);
+                component.Display(depth + 10);
             }
+            Console.WriteLine("\n");
         }
     }
 }

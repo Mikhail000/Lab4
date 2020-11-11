@@ -18,9 +18,9 @@ namespace Lab4
 
             root.Add(engineV6);
             root.Add(wheel);
-            root.Add(new Transmission(quantity: 1));
             root.Add(door);
             root.Add(differential);
+            root.Add(new Transmission(quantity: 1));
             root.Add(new GasTank(quantity: 1));
 
             Assembly pistonSystem = new Assembly("Piston system", 1);
